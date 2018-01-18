@@ -1,12 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TxtFile6 : MonoBehavior {
+	
+	public Text sigong;
+	public static bool isSigongHaveToBeGodGame;
+	public Button Yes;
+	public Button No;
 
-	void Start ()
+	void Update ()
 	{
-		Debug.Log("Hello, World!");
+		if (!isSigongHaveToBeGodGame) 
+		{
+			sigong.text = "감히 시공을 싫어하다니! 세상이 너를 저주하게 될 것이야!!!";
+		}
+		if (isSigongHaveToBeGodGame)
+		{
+			sigong.text = "역시 당신은 시공을 좋아하는 사람이 맞군요! 시공의 폭풍은 정말 최고야!";
+	{
+
+	public void OnClickYes ()
+	{
+		isSigongHaveToBeGodGame = true;
+	}
+	
+	public void OnClickNo ()
+	{
+		isSigongHaveToBeGodGame = false;
 	}
 }
 
